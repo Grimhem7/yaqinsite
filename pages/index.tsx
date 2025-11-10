@@ -84,7 +84,7 @@ export default function Home() {
                   <Video videoId="jgb3pqs49i" />
                 </div>
                 <p className="mt-6 text-lg leading-8 text-gray-400">
-               Yaqine LLC is a U.S.-registered digital marketing and e-commerce consulting company helping international brands build online stores, create product videos, and scale their sales with paid advertising.
+               Yaqine LLC is a U.S. registered digital marketing and e-commerce consulting company helping international brands build online stores, create product videos, and scale their sales with paid advertising.
                 </p>
                 <div className="relative mt-10 flex flex-row items-center justify-center gap-2 mb-[-40px]">
                   <Link href="#partner" className="button-33" scroll={true}>
