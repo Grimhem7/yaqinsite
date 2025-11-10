@@ -64,20 +64,9 @@ export function PricingTable() {
     <div>
 
       {/* Pricing toggle */}
-      <div className="relative z-[20] flex justify-center max-w-[14rem] m-auto mb-8 lg:mb-16">
-        <div className="relative flex w-full p-1 bg-slate-900 rounded-full">
-          <span className="absolute inset-0 m-1 pointer-events-none" aria-hidden="true">
-            <span className={`absolute inset-0  bg-indigo-500 rounded-full shadow-sm shadow-indigo-950/10 transform `}></span>
-          </span>
-          <button
-            className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 text-white`}
-            onClick={() => setYearly(true)}
-            aria-pressed={yearly}
-          >
-            Consulting
-          </button>
-        </div>
-      </div>
+      <h2 className="text-2xl font-bold tracking-tight text-gray-50 sm:text-4xl mb-10 text-center">
+                  Choose the plan that fits your goals
+                </h2>
 
       <div className="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-
        lg:max-w-none">
