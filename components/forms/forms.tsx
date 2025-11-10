@@ -6,6 +6,60 @@ export default function Form() {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [selectedOption2, setSelectedOption2] = useState<string>("");
   const [selectedOption3, setSelectedOption3] = useState<string>("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    number: "",
+  });
+  const [popup, setPopup] = useState({ show: false, message: "", color: "" });
+
+  // ✅ Ajoute un état pour le contrôle visuel
+  const [validation, setValidation] = useState({
+    name: "",
+    number: "",
+  });
+
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSend = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    // Vérifie chaque champ individuellement
+    const nameValid = form.name.trim() !== "";
+    const numberValid = form.number.trim() !== "";
+
+    setValidation({
+      name: nameValid ? "valid" : "invalid",
+      number: numberValid ? "valid" : "invalid",
+    });
+
+    // Si les deux sont vides
+    if (!nameValid || !numberValid) {
+      setPopup({
+        show: true,
+        message: "⚠️ Please fill all fields before sending.",
+        color: "bg-orange-500",
+      });
+      setTimeout(() => setPopup({ show: false, message: "", color: "" }), 3000);
+      return;
+    }
+    // ✅ Si tout est bon
+    setPopup({
+      show: true,
+      message: "✅ Information sent successfully!",
+      color: "bg-green-500",
+    });
+    setTimeout(() => setPopup({ show: false, message: "", color: "" }), 3000);
+
+    // Réinitialiser le form
+    setForm({ name: "", number: "" });
+    setValidation({ name: "", number: "" });
+  };
+
+
+
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event.target.value);
@@ -22,23 +76,67 @@ export default function Form() {
         <input
           type="text"
           id="name"
-          className={styles.formInput}
+          name="name"
+          className={`${styles.formInput} ${
+            validation.name === "valid"
+              ? "border-green-500"
+              : validation.name === "invalid"
+              ? "border-orange-500"
+              : ""
+          }`}
           placeholder=" "
+          value={form.name}
+          onChange={handleChange}
         />
         <label htmlFor="name" className={styles.formLabel}>
           Full Name
         </label>
       </div>
+      <div className="flex w-full flex-col items-start justify-start ">
+        <div className="flex w-full flex-1 flex-row items-stretch justify-start ">
+          <input
+            placeholder=""
+            name="fullname"
+            type="text"
+            className="flex h-10 rounded-lg border border-gray-800 bg-transparent px-3 py-3 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full"
+          />
+        </div>
+      </div>
+    <div className="">
+      <div className={styles.formGroup}>
+         <input
+          type="number"
+          id="number"
+          name="number"
+          className={`${styles.formInput} ${
+            validation.number === "valid"
+              ? "border-green-500"
+              : validation.number === "invalid"
+              ? "border-orange-500"
+              : ""
+          }`}
+          placeholder=" "
+          value={form.number}
+          onChange={handleChange}
+        />
+      <label htmlFor="number" className={styles.formLabel}>
+          Number
+        </label>
+      </div>
+      </div>
       <div className="space-y-2 flex w-full flex-col items-start justify-start gap-2">
         <div className="flex w-full flex-1 flex-row items-stretch justify-start gap-2">
           <input
             placeholder=""
-            name="fullname"
+            name="Telephone"
             type="text"
             className="flex h-10 rounded-lg border border-gray-800 bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full"
           />
         </div>
       </div>
+
+      
+      
       <div className="space-y-2 flex w-full flex-col items-start justify-start gap-2 mt-[15px] ">
         <label
           htmlFor=""
@@ -120,8 +218,16 @@ export default function Form() {
         </div>
       </div>
       <div className="flex w-full flex-row mt-[15px] flex justify-center">
-        <button className={styles.button35}>Send your information</button>
+        <button  onClick={handleSend} className={styles.button35}>Send your information</button>
       </div>
+       {/* Popup */}
+      {popup.show && (
+        <div
+          className={`absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 ${popup.color} text-white px-6 py-3 rounded-lg shadow-lg animate-fadeIn`}
+        >
+          {popup.message}
+        </div>
+      )}
     </div>
   );
 }
