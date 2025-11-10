@@ -1,0 +1,78 @@
+.container {
+    width: 100%;
+    max-width: 50em;
+    margin: 0 auto;
+  }
+  
+  .formGroup {
+    position: relative;
+    margin-bottom: 50px;
+  }
+  
+  .formInput {
+    position: absolute;
+    height: 2.5em;
+    width: 100%;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 0.5em;
+    outline: none;
+    color: #fff;
+    padding-right: 1em;
+    font-size: 1rem;
+  }
+  
+  .formInput:hover {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .formInput:focus {
+    border: 2px solid rgb(15 23 42);
+  }
+  
+  .formLabel {
+    position: absolute;
+    left: 1em;
+    top: 0.6em;
+    color: #fff;
+    font-family: sans-serif;
+    background: rgb(15 23 42);
+    cursor: text;
+    font-size: 0.9rem;
+    transition: top 350ms ease-in, font-size 350ms ease-in;
+    pointer-events: none;
+    text-align: right;
+    color : #9ca3af
+  }
+  
+  .formInput:focus + .formLabel,
+  .formInput:not(:placeholder-shown) + .formLabel {
+    top: -0.6em;
+    font-size: 0.75rem;
+    padding: 0 0.3em;
+  }
+  
+  .button35 {
+    background-color: #ffffff;
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -25px 18px -14px inset,rgba(255, 255, 255, 0.15) 0 1px 2px,rgba(255, 255, 255, 0.15) 0 2px 4px,rgba(255, 255, 255, 0.15) 0 4px 8px,rgba(255, 255, 255, 0.15) 0 8px 16px,rgba(255, 255, 255, 0.15) 0 16px 32px;
+    color: rgb(9 66 89);
+    cursor: pointer;
+    display: inline-block;
+    font-family:sans-serif;
+    padding: 7px 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 15px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 15px;
+  }
+  
+  .button35:hover {
+    box-shadow: rgb(255, 238, 0) 0 -25px 18px -14px inset,rgb(229, 255, 0) 0 1px 2px,rgba(255, 255, 255, 0.25) 0 2px 4px,rgba(255, 255, 255, 0.25) 0 4px 8px,rgba(255, 255, 255, 0.25) 0 8px 16px,rgba(255, 255, 255, 0.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+  }

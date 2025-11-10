@@ -1,0 +1,367 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'animate.css';
+
+@layer base {
+  @font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://www.ecomvestors.com/_next/static/media/113e45204b7932a3-s.p.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'broked';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url(https://www.ecomvestors.com/_next/static/media/0b3ba4bd860abcf8.p.woff2) format("woff2");
+    unicode-range: u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+2074,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd
+  }
+}
+
+/* Write custom base/ component/ utility styles with `@layer` directive */
+
+#myRange {
+  -webkit-appearance: none;
+  appearance: none; 
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+#myRange::-webkit-slider-runnable-track {
+  height: 15px;
+  background: #ccc;
+  border-radius: 16px;
+}
+
+#myRange::-moz-range-track {
+  height: 15px;
+  background: #ccc;
+  border-radius: 16px;
+}
+
+#myRange::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none; 
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #3b82f6;
+  box-shadow: -407px 0 0 400px #3b82f6;
+}
+
+#__next{
+  width: 100%;
+}
+
+.wistia_responsive_wrapper div{
+  border-radius: 15px;
+}
+
+.wistia_responsive_wrapper{
+  border-radius: 25px;
+}
+
+@layer base {
+
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select {
+    @apply border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-lg shadow-sm;
+  }
+
+  [type="checkbox"],
+  [type="radio"] {
+    @apply border-gray-300 focus:ring-blue-500 h-5 text-blue-600 w-5;
+  }
+
+  [type="checkbox"] {
+    @apply rounded;
+  }
+
+  [type="radio"] {
+    @apply rounded-full;
+  }
+
+}
+
+@layer components {
+
+  .prose :where(code):not(:where([class~="not-prose"] *)) {
+    @apply bg-gray-200 dark:bg-gray-800 dark:text-white font-normal px-1 py-0.5 rounded-md text-sm;
+  }
+
+  .prose :where(code):not(:where([class~="not-prose"] *))::before {
+    content: '';
+  }
+
+  .prose :where(code):not(:where([class~="not-prose"] *))::after {
+    content: '';
+  }
+
+}
+.text-muted-foreground {
+  color: #9ca3af;
+}
+.broken {
+  font-family: broked;
+  font-style: normal
+}
+
+[type='radio']:checked,[type='radio']:focus {
+  outline: none !important;
+  box-shadow: 0px 0px 0px 1px #4c5564;
+  border: 5px solid black !important;
+  background: white;
+  background-image: none;
+  border-radius: 50%;
+}
+.bg-gray-950\/50 {
+  background-color: rgba(3, 7, 18, .5);
+}
+[data-state=open] > svg {
+  transform: rotate(180deg);
+}
+.css-1f773le-MuiButtonBase-root-MuiAccordionSummary-root{
+  padding: 0 !important;
+}
+.css-eqpfi5-MuiAccordionSummary-content{
+  margin: 0 !important;
+}
+.css-1086bdv-MuiPaper-root-MuiAccordion-root, .css-1aj41gs{
+  background-color: transparent !important;
+  color: white !important;
+  box-shadow: inherit !important;
+}
+.css-15v22id-MuiAccordionDetails-root{
+  padding: 0 0 16px 0px !important;
+}
+.css-1086bdv-MuiPaper-root-MuiAccordion-root{
+  border-radius: inherit !important;
+}
+.css-1f773le-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded{
+  padding: 0 !important;
+}
+.css-eqpfi5-MuiAccordionSummary-content.Mui-expanded{
+  margin: 0 !important;
+}
+.bg-gray-950 {
+  --tw-bg-opacity: 1;
+  background-color: #030712;
+}
+.border-gray-950{
+  border: 2px solid #030712;
+}
+.nextButton {
+  /* Your initial styles for the button */
+  opacity: 1;
+  transition: opacity 1s; /* Define the transition property with the desired duration */
+}
+
+.showNextButton {
+  opacity: 1;
+  transition: opacity 1s;
+}
+@media screen and (min-width: 1025px){
+  .bgwhite{
+    background: rgba(254, 254, 254, 0.56);
+  }
+  .bg-blue-500{
+    background-color: #608FF5;
+  }
+}
+@media screen and (max-width: 1024px){
+  .backnext{
+    background: #d6e4fe
+  }
+}
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+th,td{
+  border: 1px solid black;
+}
+th{
+  background-color: #608FF5;
+  color: white;
+}
+td{
+  background: rgba(254, 254, 254, 0.56);
+}
+.centerImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.textpresentation{
+  color: rgb(156 163 175);
+  text-align: right;
+  line-height: 2;
+  
+}
+
+.cairo-presentation {
+  font-family: "Cairo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+.button-33 {
+  background-color: #ffffff;
+  border-radius: 100px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -25px 18px -14px inset,rgba(255, 255, 255, 0.15) 0 1px 2px,rgba(255, 255, 255, 0.15) 0 2px 4px,rgba(255, 255, 255, 0.15) 0 4px 8px,rgba(255, 255, 255, 0.15) 0 8px 16px,rgba(255, 255, 255, 0.15) 0 16px 32px;
+  color: rgb(9 66 89);
+  cursor: pointer;
+  display: inline-block;
+  font-family:sans-serif;
+  padding: 7px 25px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgb(255, 238, 0) 0 -25px 18px -14px inset,rgb(229, 255, 0) 0 1px 2px,rgba(255, 255, 255, 0.25) 0 2px 4px,rgba(255, 255, 255, 0.25) 0 4px 8px,rgba(255, 255, 255, 0.25) 0 8px 16px,rgba(255, 255, 255, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.button-34 {
+  background-color: rgb(14, 99, 133);
+  border-radius: 100px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0 -25px 18px -14px inset,rgba(255, 255, 255, 0.15) 0 1px 2px,rgba(255, 255, 255, 0.15) 0 2px 4px,rgba(255, 255, 255, 0.15) 0 4px 8px,rgba(255, 255, 255, 0.15) 0 8px 16px,rgba(255, 255, 255, 0.15) 0 16px 32px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  font-family:sans-serif;
+  padding: 7px 25px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  @media only screen and (min-width: 600px) {
+    margin-left: 15px;
+  }
+}
+
+.button-34:hover {
+  box-shadow: rgb(5, 45, 61) 0 -25px 18px -14px inset,rgb(5, 45, 61) 0 1px 2px,rgba(255, 254, 254, 0.25) 0 2px 4px,rgba(255, 255, 255, 0.25) 0 4px 8px,rgba(255, 255, 255, 0.25) 0 8px 16px,rgba(255, 255, 255, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+}
+
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.noto-sans-arabic-whome {
+  font-family: "Noto Sans Arabic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
