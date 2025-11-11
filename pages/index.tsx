@@ -224,7 +224,7 @@ export default function Home() {
                   <div className="mb-8  size-16 items-center justify-center rounded-xl bg-gray-900 mx-auto">
                     <img
                       className="rounded-xl shadow-2xl shadow-blue-500/10 backdrop-blur-md"
-                      src="images/Flag_of_Algeria_Flat_Round_Corner-64x64.png"
+                      src="images/icons8-france-64.png"
                       alt=""
                     />
                   </div>
@@ -239,7 +239,7 @@ export default function Home() {
                   <div className="mb-8  size-16 items-center justify-center rounded-xl bg-gray-900 mx-auto">
                     <img
                       className="rounded-xl shadow-2xl shadow-blue-500/10 backdrop-blur-md"
-                      src="images/Flag_of_African_Union_Flat_Round_Corner-64x64.png"
+                      src="images/icons8-italy-64.png"
                       alt=""
                     />
                   </div>
@@ -254,7 +254,7 @@ export default function Home() {
                   <div className="mb-8  size-16 items-center justify-center rounded-xl bg-gray-900 mx-auto">
                     <img
                       className="rounded-xl shadow-2xl shadow-blue-500/10 backdrop-blur-md"
-                      src="images/Flag_of_Saudi_Arabia_Flat_Round_Corner-64x64.png"
+                      src="images/icons8-netherlands-64.png"
                       alt=""
                     />
                   </div>
@@ -270,7 +270,7 @@ Make your business not only profitable, but also enjoyable to run.
                   <div className="mb-8  size-16 items-center justify-center rounded-xl bg-gray-900 mx-auto">
                     <img
                       className="rounded-xl shadow-2xl shadow-blue-500/10 backdrop-blur-md"
-                      src="images/Flag_of_Morocco_Flat_Round_Corner-64x64.png"
+                      src="images/icons8-germany-64.png"
                       alt=""
                     />
                   </div>
